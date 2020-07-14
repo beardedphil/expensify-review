@@ -22,12 +22,13 @@ module.exports = (env) => {
         },
         output: {
             filename: 'bundle.js',
-            path: path.join(__dirname, 'public'),
+            path: path.join(__dirname, 'public', 'dist'),
         },
         devtool: isProduction ? 'source-map' : 'eval-cheap-module-source-map',
         devServer: {
             contentBase: path.join(__dirname, 'public'),
-            historyApiFallback: true
+            historyApiFallback: true,
+            publicPath: "/dist/"
         }
     };
 };
